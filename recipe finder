@@ -51,7 +51,7 @@ recipes = [
         "ingrediants": ["bulgur", "tomato juice", "onion"],
         "instructions": [
             "1- wash the bulgur with cold water",
-            "2- cut the onions in medium size cubes",
+            "2- cut the onions in medium sizes cubes",
             "3- in a pot, place some olive oil and bring it to 160 degrees c, add the onion and stir for 8 min ",
             "4- add the Bulgur and stir for another 5 min",
             "5- add the tomato juice with some water, salt and cumin if you have it.",
