@@ -42,7 +42,7 @@ def take_user_input_UserOption1():
       if not input_values :
         continue
       input_values = input_values.split(",")
-      formated_input_values = [i.strip() for i in input_values]
+      formated_input_values = [i.strip() for i in input_values] + ['salt','pepper','oil', 'vinegar', 'water']
       return formated_input_values
 
 # When there are no results for a user, he/she can run the program again
@@ -62,13 +62,9 @@ def try_again():
 # function to add to JSON
 def write_json(new_data, filename='Recipes.json'):
     with open(filename,'r+', encoding='utf-8') as file:
-          # First we load existing data into a dict.
         file_data = json.load(file)
-        # Join new_data with file_data inside emp_details
         file_data["Recipes"].append(new_data)
-        # Sets file's current position at offset.
         file.seek(0)
-        # convert back to json.
         json.dump(file_data, file, ensure_ascii=False, indent = 4)
  
 
@@ -127,7 +123,7 @@ def based_on_fridge_recipes():
       print(f"Video link: {values['Video_link']} \n")
       print(f"Picture link: {values['Picture_link']} \n")
       print("Instructions to follow: " + values['Instructions']+ "\n")
-      print("Enjoy your meal. ")
+      print("Enjoy your meal.")
   
 
 #Option 2 - Not done yet:
@@ -153,8 +149,8 @@ def new_recipe_from_a_user():
       Check_input_with_user()
 
   checked_recipe_to_append = Check_input_with_user()
-
-  write_json(checked_recipe_to_append)
+  if checked_recipe_to_append != None:
+   write_json(checked_recipe_to_append)
 
 ###-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
